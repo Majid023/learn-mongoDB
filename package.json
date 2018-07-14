@@ -1,0 +1,26 @@
+{
+  "name": "learn-mongodb",
+  "version": "1.0.0",
+  "description": "learn mongoDB",
+  "main": "app/app.js",
+  "scripts": {
+    "start": "nodemon -e ejs,css,js,json app/app.js --watch app" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Majid023/learn-mongoDB.git"
+  },
+  "author": "Majid Ansari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Majid023/learn-mongoDB/issues"
+  },
+  "homepage": "https://github.com/Majid023/learn-mongoDB#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.1",
+    "nodemon": "^1.18.1",
+    "reload": "^2.3.0"
+  }
+}
