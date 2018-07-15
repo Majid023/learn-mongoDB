@@ -159,7 +159,7 @@ router.get( "/" , function( req , res ){
 });*/
 
 
-//delete document
+//delete  one document at a time 
 /*router.get( "/" , function( req , res ){
     var url = "mongodb://localhost:27017/";
     
@@ -177,5 +177,27 @@ router.get( "/" , function( req , res ){
            });
     });
 });*/
+
+//delete   documents at a time 
+/*router.get( "/" , function( req , res ){
+    var url = "mongodb://localhost:27017/";
+    
+    mongoDB.connect( url , function ( err , db){
+        
+           if( err ) throw err ;
+           var dbo = db.db( "learndb" );
+           var query = { address : /^O/ };
+           dbo.collection( "friendlist").deleteMany(query , function(err , result ){
+                if ( err ) throw err;
+                console.log( "1 document deleted ");
+                db.close();
+                res.send( "deleted" + result.deletedCount);
+             
+           });
+    });
+});*/
+
+
+
 
 module.exports = router;
