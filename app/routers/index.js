@@ -68,4 +68,114 @@ router.get( "/" , function( req , res ){
     });
     res.send("majid");
 });*/
+
+
+//find one document in learndb database
+  /*  router.get( "/" , function( req , res ){
+        var url = "mongodb://localhost:27017/";
+        mongoDB.connect( url , function( err, db){
+            if (err) throw err;
+            var dbo = db.db( "learndb" );
+        
+            dbo.collection("friendlist").findOne({},function(err ,result){
+                if (err) throw err ;
+                db.close();
+                res.send(result.name + " "+ result.address);
+            });
+             
+        });
+       
+});*/
+
+
+// find all documents from freindlist collection
+/*router.get( "/" , function( req , res ){
+    var url = "mongodb://localhost:27017/";
+    mongoDB.connect( url , function( err, db){
+        if (err) throw err;
+        var dbo = db.db( "learndb" );
+    
+        dbo.collection("friendlist").find({}).toArray(function(err ,result){
+            if (err) throw err ;
+            db.close();
+            res.send(result);
+        });
+         
+    });
+   
+});*/
+
+
+
+// find all documents from freindlist collection but id is not include
+/*router.get( "/" , function( req , res ){
+    var url = "mongodb://localhost:27017/";
+    mongoDB.connect( url , function( err, db){
+        if (err) throw err;
+        var dbo = db.db( "learndb" );
+    
+        dbo.collection("friendlist").find({},{_id:0,name:1,address:1}).toArray(function(err ,result){
+            if (err) throw err ;
+            db.close();
+            res.send(result);
+            
+        });
+         
+    });
+   
+});
+*/
+
+// filter th result
+
+/*router.get( "/" , function( request , response){
+    var url ="mongodb://localhost:27017/";
+    mongoDB.connect(url , function(err , db){
+        if ( err ) throw err ;
+        var dbo = db.db( "learndb" );
+        var query = { address:/^S/};
+        dbo.collection("friendlist").find(query).toArray(function(err,result){
+            if (err) throw err;
+            console.log(result);
+            db.close();
+        });
+    });
+});*/
+
+// sort the result
+
+/*router.get( "/" , function( request , response){
+    var url ="mongodb://localhost:27017/";
+    mongoDB.connect(url , function(err , db){
+        if ( err ) throw err ;
+        var dbo = db.db( "learndb" );
+        var query = { name : 1};
+        dbo.collection("friendlist").find().sort(query).toArray(function(err,result){
+            if (err) throw err;
+            console.log(result);
+            db.close();
+        });
+    });
+});*/
+
+
+//delete document
+/*router.get( "/" , function( req , res ){
+    var url = "mongodb://localhost:27017/";
+    
+    mongoDB.connect( url , function ( err , db){
+        
+           if( err ) throw err ;
+           var dbo = db.db( "learndb" );
+           var query = { address : "Mukundabera" };
+           dbo.collection( "friendlist").deleteOne(query , function(err , result ){
+                if ( err ) throw err;
+                console.log( "1 document deleted ");
+                db.close();
+                res.send( "deleted" + result.deletedCount);
+             
+           });
+    });
+});*/
+
 module.exports = router;
