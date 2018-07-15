@@ -199,5 +199,28 @@ router.get( "/" , function( req , res ){
 
 
 
+//drop  collection  
+//when once you delete collection then you try again deleted collection then it generate erro ns not found
+// its means collection not found witch you want to delete
+/*router.get( "/" , function( req , res ){
+    var url = "mongodb://localhost:27017/";
+    
+mongoDB.connect(url, function(err, db) {
+    if (err) throw err;
+    var dbo = db.db("learndb");
+    dbo.dropCollection("friendlist", function(err, delOK) {
+      if (err) throw err;
+      if (delOK) console.log("Collection deleted");
+      db.close();
+    });
+  }); 
+});*/
+
+
+
+
+
+
+
 
 module.exports = router;
